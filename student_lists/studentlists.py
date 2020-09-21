@@ -20,7 +20,6 @@ class ClassList:
         # TODO raise an exception - StudentError - if max_students is zero or negative. 
         # Write test to confirm.
 
-
     def add_student(self, student):
         ''' Add student if there is space in the class,
         Raises Error if student is already in the list '''
@@ -30,7 +29,6 @@ class ClassList:
             else:
                 raise StudentError('Student %s already enrolled, can\'t add again' % student)
 
-
     def remove_student(self, student):
         ''' Remove student from class list. Raises Error if student not in list '''
         if student not in self.class_list:
@@ -38,11 +36,9 @@ class ClassList:
 
         self.class_list.remove(student)
 
-
     def is_enrolled(self, student):
         ''' Verifies if the student is enrolled or not '''
         return student in self.class_list
-
 
     def index_of_student(self, student):
         ''' Returns position of student in list, indexed from 1

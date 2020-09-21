@@ -106,8 +106,10 @@ class TestStudentLists(TestCase):
         test_class = self.common_add_many_students()
         self.assertTrue(test_class.is_class_full())
 
-    def test_is_class_full_empty_and_high_max(self):
+    def test_is_class_full_empty(self):
         test_class = ClassList(0)
         self.assertTrue(test_class.is_class_full())
-        test_class_2 = ClassList(10)
-        self.assertFalse(test_class_2.is_class_full())
+
+    def test_is_class_full_high_max(self):
+        test_class = ClassList(1)
+        self.assertFalse(test_class.is_class_full())
