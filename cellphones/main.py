@@ -1,5 +1,6 @@
 from phone_manager import Phone, Employee, PhoneAssignments
 
+
 def main():
 
     assignments = PhoneAssignments()
@@ -31,8 +32,10 @@ def main():
     print(assignments.phone_info(employee3))  # None
 
     assignments.assign(phone3.id, employee3)   # Assign phone 3 to employee 3
-    assignments.assign(phone2.id, employee3)   # Reassign phone 3 to employee3. TODO this should fail; employee3 should not be able to have two phones
-
+    print(assignments.phone_info(employee3))  # None
+    #assignments.assign(phone2.id, employee3)   # Reassign phone 3 to employee3 (PhoneError Exception)
+    #assignments.assign(phone3.id,employee1)
+    print(assignments.phone_info(employee3))  # PhoneError Exception
 
 
 if __name__ == '__main__':

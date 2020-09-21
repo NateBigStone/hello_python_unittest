@@ -1,42 +1,40 @@
 import unittest
-from phone_manager import Phone, Employee, PhoneAssignments, PhoneError
+from .phone_manager import Phone, Employee, PhoneAssignments, PhoneError
+
 
 class TestPhoneManager(unittest.TestCase):
 
     def test_create_and_add_new_phone(self):
 
-        testPhone1 = Phone(1, 'Apple', 'iPhone 6')
-        testPhone2 = Phone(2, 'Apple', 'iPhone 5')
+        test_phone1 = Phone(1, 'Apple', 'iPhone 6')
+        test_phone2 = Phone(2, 'Apple', 'iPhone 5')
 
-        testPhones = [ testPhone1, testPhone2 ]
+        test_phones = [test_phone1, test_phone2]
 
-        testAssignmentMgr = PhoneAssignments()
-        testAssignmentMgr.add_phone(testPhone1)
-        testAssignmentMgr.add_phone(testPhone2)
+        test_assignment_mgr = PhoneAssignments()
+        test_assignment_mgr.add_phone(test_phone1)
+        test_assignment_mgr.add_phone(test_phone2)
 
         # assertCountEqual checks if two lists have the same items, in any order.
         # (Despite what the name implies)
-        self.assertCountEqual(testPhones, testAssignmentMgr.phones)
-
+        self.assertCountEqual(test_phones, test_assignment_mgr.phones)
 
     def test_create_and_add_phone_with_duplicate_id(self):
         # TODO add a phone, add another phone with the same id, and verify an PhoneError exception is thrown
         # TODO you'll need to modify PhoneAssignments.add_phone() to make this test pass
-        testPhone1 = Phone(1, 'Apple', 'iPhone 6')
-        testPhone2 = Phone(1, 'Apple', 'iPhone 5')
+        test_phone1 = Phone(1, 'Apple', 'iPhone 6')
+        test_phone2 = Phone(1, 'Apple', 'iPhone 5')
 
-        testAssignmentMgr = PhoneAssignments()
-        testAssignmentMgr.add_phone(testPhone1)
+        test_assignment_mgr = PhoneAssignments()
+        test_assignment_mgr.add_phone(test_phone1)
 
         with self.assertRaises(PhoneError):
-            testAssignmentMgr.add_phone(testPhone2)
-
+            test_assignment_mgr.add_phone(test_phone2)
 
     def test_create_and_add_new_employee(self):
         # TODO write this test and then remove the self.fail() statement
         # Add some employees and verify they are present in the PhoneAssignments.employees list
         self.fail()
-
 
     def test_create_and_add_employee_with_duplicate_id(self):
         # TODO write this test and then remove the self.fail() statement
@@ -44,13 +42,11 @@ class TestPhoneManager(unittest.TestCase):
         # This method will be similar to test_create_and_add_phone_with_duplicate_id
         self.fail()
 
-
     def test_assign_phone_to_employee(self):
         # TODO write this test and remove the self.fail() statement
         # TODO you'll need to fix the assign method in PhoneAssignments
 
         self.fail()
-
 
     def test_assign_phone_that_has_already_been_assigned_to_employee(self):
         # If a phone is already assigned to an employee, it is an error to assign it to a different employee. A PhoneError should be raised.
@@ -59,13 +55,11 @@ class TestPhoneManager(unittest.TestCase):
 
         self.fail()
 
-
     def test_assign_phone_to_employee_who_already_has_a_phone(self):
         # TODO write this test and remove the self.fail() statement
         # TODO you'll need to fix the assign method in PhoneAssignments so it raises a PhoneError if the phone is alreaady assigned.
 
         self.fail()
-
 
     def test_assign_phone_to_the_employee_who_already_has_this_phone(self):
         # TODO The method should not make any changes but NOT raise a PhoneError if a phone
@@ -73,12 +67,10 @@ class TestPhoneManager(unittest.TestCase):
 
         self.fail()
 
-
     def test_un_assign_phone(self):
         # TODO write this test and remove the self.fail() statement
         # Assign a phone, unasign the phone, verify the employee_id is None
         self.fail()
-
 
     def test_get_phone_info_for_employee(self):
         # TODO write this test and remove the self.fail() statement
